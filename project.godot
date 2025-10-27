@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Ike3mil"
+run/main_scene="uid://lja2u4kbxtfy"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MultiplayerInput="*res://addons/multiplayer_input/multiplayer_input.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg")
 
 [rendering]
 
