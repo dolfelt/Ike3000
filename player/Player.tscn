@@ -16,10 +16,7 @@ polygon = PackedVector2Array(-2, -12, 2, -12, 16, -2, 16, 5, 0, 12, -16, 5, -16,
 one_way_collision_margin = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2, -2)
-zoom = Vector2(3.15, 3.15)
-limit_left = -140
-limit_right = 225
-limit_bottom = 140
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+zoom = Vector2(3.13, 3.13)
+limit_left = 16
+limit_right = 383
+limit_bottom = 0

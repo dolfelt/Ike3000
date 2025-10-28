@@ -4,7 +4,7 @@ const SPEED = 200.0
 
 var move_direction: Vector2 = Vector2.ZERO
 
-@onready var character = $Character
+# @onready var character = $Character
 
 func _input(event: InputEvent) -> void:
 	move_direction.x = MultiplayerInput.get_axis(0, "ui_left", "ui_right")
