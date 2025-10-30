@@ -4,15 +4,32 @@ const SPEED = 200.0
 
 var move_direction: Vector2 = Vector2.ZERO
 
-# @onready var character = $Character
+var WeaponNode = preload("res://player/weapon.tscn")
+
+@onready var weaponTimer = $WeaponTimer
+var canFireWeapon: bool = true;
+
+func _process(delta: float) -> void:
+	if MultiplayerInput.is_action_pressed(0, "ui_fire", true) and canFireWeapon:
+		_do_weapon()
 
 func _input(event: InputEvent) -> void:
 	move_direction.x = MultiplayerInput.get_axis(0, "ui_left", "ui_right")
 	move_direction.y = MultiplayerInput.get_axis(0, "ui_up", "ui_down")
 
+
+func _do_weapon() -> void:
+	canFireWeapon = false
+	weaponTimer.start()
+	var weapon:Area2D = WeaponNode.instantiate()
+	weapon.global_position = global_position
+	get_parent().add_child(weapon)
+	
+	
+
 func _handle_movement(delta, speed = SPEED):
 	if move_direction.x:
-		velocity.x = lerp(velocity.x, move_direction.x * speed, 0.2 * delta / (1 / 30.0))
+		velocity.x = lerp(velocity.x, move_direction.x * speed, 0.2 * delta * 30.0)
 
 		# if velocity.x > 0:
 		# 	character.scale.x = 1
@@ -28,6 +45,10 @@ func _handle_movement(delta, speed = SPEED):
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:   
 	_handle_movement(delta)
 	move_and_slide()
+
+
+func _on_weapon_timer_timeout() -> void:
+	canFireWeapon = true

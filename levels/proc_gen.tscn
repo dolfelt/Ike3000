@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dty6s0xyh18c"]
 
-[ext_resource type="Script" uid="uid://dq0a7a1vsusns" path="res://proc_gen.gd" id="1_m4nh0"]
-[ext_resource type="TileSet" uid="uid://cqyrakpucvyco" path="res://assets/tileset.tres" id="2_8g81v"]
+[ext_resource type="Script" uid="uid://dq0a7a1vsusns" path="res://levels/proc_gen.gd" id="1_m4nh0"]
+[ext_resource type="TileSet" uid="uid://cihvteuubgdax" path="res://assets/tileset.tres" id="2_8g81v"]
 [ext_resource type="PackedScene" uid="uid://d0kc0h0ynoqbu" path="res://player/Player.tscn" id="3_slcvi"]
 
 [sub_resource type="Gradient" id="Gradient_m4nh0"]

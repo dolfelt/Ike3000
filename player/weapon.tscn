@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd16tbiffax4"]
+
+[ext_resource type="Script" uid="uid://cgd0866h7fxgw" path="res://player/weapon.gd" id="1_kyb8j"]
+[ext_resource type="Texture2D" uid="uid://biksu38qxrssm" path="res://assets/tiles/tiles.png" id="1_mnyy7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyb8j"]
+radius = 5.0
+height = 20.0
+
+[node name="Weapon" type="Area2D"]
+script = ExtResource("1_kyb8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mnyy7")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kyb8j")

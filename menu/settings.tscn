@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://2yndgrqqdg1y"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 120.0
+offset_right = 717.6005
+offset_bottom = 152.0
+rounded = true
+
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 151.0
+offset_right = 718.6005
+offset_bottom = 183.0
+rounded = true
+
+[node name="Sound effects" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 182.0
+offset_right = 719.6005
+offset_bottom = 214.0
+rounded = true
+
+[node name="Volume label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 79.0
+offset_right = 607.0
+offset_bottom = 110.0
+text = "Volume"
+
+[node name="Master label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 121.0
+offset_right = 380.0
+offset_bottom = 152.0
+text = "Master"
+
+[node name="Music label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 152.0
+offset_right = 381.0
+offset_bottom = 183.0
+text = "Music"
+
+[node name="Sound effects label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 186.0
+offset_right = 382.0
+offset_bottom = 217.0
+text = "Sound effects"
