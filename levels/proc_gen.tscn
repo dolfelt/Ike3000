@@ -34,5 +34,13 @@ tile_set = ExtResource("2_8g81v")
 [node name="ObjectTileMap" type="TileMapLayer" parent="."]
 tile_set = ExtResource("2_8g81v")
 
-[node name="Player" parent="." instance=ExtResource("3_slcvi")]
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -216)
+anchor_mode = 0
+limit_enabled = false
+limit_left = 16
+limit_right = 383
+limit_bottom = 0
+
+[node name="Player" parent="Camera2D" instance=ExtResource("3_slcvi")]
 position = Vector2(122, -32)

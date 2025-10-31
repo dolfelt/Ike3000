@@ -8,36 +8,32 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_elttd")
 script = ExtResource("1_seqgi")
 
 [node name="Man made map" parent="." instance=ExtResource("3_vio6n")]
-position = Vector2(551, 85)
-scale = Vector2(4, 4)
+position = Vector2(145, 334)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme = ExtResource("1_elttd")
 text = "START"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme = ExtResource("1_elttd")
 text = "QUIT"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme = ExtResource("1_elttd")
 text = "SETTINGS"

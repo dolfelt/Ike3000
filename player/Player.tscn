@@ -16,12 +16,6 @@ visible = false
 polygon = PackedVector2Array(-2, -12, 2, -12, 16, -2, 16, 5, 0, 12, -16, 5, -16, -2)
 one_way_collision_margin = 0.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.13, 3.13)
-limit_left = 16
-limit_right = 383
-limit_bottom = 0
-
 [node name="WeaponTimer" type="Timer" parent="."]
 wait_time = 0.2
 

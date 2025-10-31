@@ -5,12 +5,15 @@ extends Node2D
 
 @onready var tilemap: TileMapLayer = $LandTileMap
 @onready var obj_tilemap: TileMapLayer = $ObjectTileMap
+@onready var camera: Camera2D = $Camera2D
 
 var noise: Noise
 var object_noise: Noise
 
-var width = 25;
-var height: int = 400;
+var width = 25
+var height: int = 700
+
+const CAMERA_SPEED = 60
 
 const TILE_WATER = Vector2i(6,3)
 const TILE_LAND = Vector2i(2,4)
@@ -29,6 +32,9 @@ func _ready() -> void:
 	noise = noise_height_map.noise
 	object_noise = noise_object_map.noise
 	generate_world()
+
+func _physics_process(delta: float) -> void:
+	camera.position.y -= CAMERA_SPEED * delta;
 
 func generate_world():
 	for x in range(width):
@@ -59,6 +65,7 @@ func get_noise_tile(noise_val: float) -> Vector2i:
 		return TILE_LAND
 
 	return TILE_WATER
+
 
 # func checkAdjCells(vec: Vector2i) -> bool:
 # 	var center_tile = get_noise_tile(vec)

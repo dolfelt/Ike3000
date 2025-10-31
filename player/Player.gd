@@ -22,7 +22,7 @@ func _do_weapon() -> void:
 	canFireWeapon = false
 	weaponTimer.start()
 	var weapon:Area2D = WeaponNode.instantiate()
-	weapon.global_position = global_position
+	weapon.position = position
 	get_parent().add_child(weapon)
 	
 	
@@ -44,6 +44,11 @@ func _handle_movement(delta, speed = SPEED):
 		velocity.y = lerp(velocity.y, move_direction.y * speed, 0.2 * delta / (1 / 60.0))
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
+	#var camera: Camera2D = get_parent()
+	var viewport: Rect2 = get_viewport_rect()
+	var view_origin: Vector2 = viewport.position - Vector2(0, viewport.size.y)
+	position = position.clamp(view_origin, view_origin + viewport.size)
+
 
 func _physics_process(delta: float) -> void:   
 	_handle_movement(delta)

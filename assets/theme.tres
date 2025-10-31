@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmner6ebex32o"]
 
-[ext_resource type="FontFile" uid="uid://bkdpn8gj111tk" path="res://assets/Pixeboy.ttf" id="1_5x3i2"]
+[ext_resource type="FontFile" uid="uid://owcicg5i3rbi" path="res://assets/Kenney Pixel.ttf" id="1_wl1kw"]
 
 [resource]
-default_font = ExtResource("1_5x3i2")
-default_font_size = 39
-/fonts/font = ExtResource("1_5x3i2")
+default_font = ExtResource("1_wl1kw")
+default_font_size = 32
+/fonts/font = ExtResource("1_wl1kw")
