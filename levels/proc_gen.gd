@@ -18,6 +18,11 @@ const CAMERA_SPEED = 60
 const TILE_WATER = Vector2i(6,3)
 const TILE_LAND = Vector2i(2,4)
 
+const TILE_HOUSE = Vector2i(0,6)
+const TILE_TENT = Vector2i(0,7)
+
+const TILES_BUILDINGS = [TILE_HOUSE, TILE_TENT]
+
 const TILE_BUSH = Vector2i(0,3)
 const TILE_TREE = Vector2i(0,4)
 const TILE_TREES = Vector2i(0,5)
@@ -37,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	camera.position.y -= CAMERA_SPEED * delta;
 
 func generate_world():
-	for x in range(width):
+	for x in range(-1, width):
 		for y in range(height):
 			var vec: Vector2i = Vector2i(x, -y)
 			var noise_val:float = noise.get_noise_2d(vec.x, vec.y)
@@ -53,6 +58,10 @@ func generate_world():
 					var obj_noise_val:float = object_noise.get_noise_2d(vec.x, vec.y)
 					if obj_noise_val > 0.75:
 						obj_tilemap.set_cell(vec, 0, TILES_TREES.pick_random())
+
+					if obj_noise_val < -0.87:
+						obj_tilemap.set_cell(vec, 0, TILES_BUILDINGS.pick_random())
+						
 
 				# tilemap.set_cell(Vector2i(x,-y), 0, TILE_LAND)
 				
