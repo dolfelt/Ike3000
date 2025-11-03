@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cblhlhmbqgwa4"]
+
+[ext_resource type="Script" uid="uid://mnn0m456ijn5" path="res://player/enemy/enemy.gd" id="1_ptpbb"]
+[ext_resource type="Texture2D" uid="uid://b0i3a8nudoif2" path="res://assets/tiles/ships.png" id="2_gugkn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jlpp"]
+radius = 27.859396
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_ptpbb")
+
+[node name="Ship" type="Sprite2D" parent="."]
+texture = ExtResource("2_gugkn")
+region_enabled = true
+region_rect = Rect2(0, 96, 32, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-2, -12, 2, -12, 16, -2, 16, 5, 0, 12, -16, 5, -16, -2)
+one_way_collision_margin = 0.0
+
+[node name="WeaponTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+position = Vector2(0, -7.9999995)
+scale = Vector2(6.104836, 6.2249727)
+shape = SubResource("CircleShape2D_7jlpp")
+
+[connection signal="timeout" from="WeaponTimer" to="." method="_on_weapon_timer_timeout"]
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]

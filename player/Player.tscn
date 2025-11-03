@@ -6,7 +6,7 @@
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3c3w1")
 
-[node name="Ship" type="Sprite2D" parent="."]
+[node name="Ship" type="Sprite2D" parent="." groups=["player"]]
 texture = ExtResource("1_ulp21")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)

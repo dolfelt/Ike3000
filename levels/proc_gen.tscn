@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dty6s0xyh18c"]
+[gd_scene load_steps=10 format=3 uid="uid://dty6s0xyh18c"]
 
 [ext_resource type="Script" uid="uid://dq0a7a1vsusns" path="res://levels/proc_gen.gd" id="1_m4nh0"]
 [ext_resource type="TileSet" uid="uid://cihvteuubgdax" path="res://assets/tileset.tres" id="2_8g81v"]
 [ext_resource type="PackedScene" uid="uid://d0kc0h0ynoqbu" path="res://player/Player.tscn" id="3_slcvi"]
+[ext_resource type="PackedScene" uid="uid://cblhlhmbqgwa4" path="res://player/enemy/enemy.tscn" id="4_s8vat"]
 
 [sub_resource type="Gradient" id="Gradient_m4nh0"]
 interpolation_mode = 1
@@ -44,3 +45,7 @@ limit_bottom = 0
 
 [node name="Player" parent="Camera2D" instance=ExtResource("3_slcvi")]
 position = Vector2(122, -32)
+
+[node name="Enemy" parent="Camera2D" instance=ExtResource("4_s8vat")]
+position = Vector2(175, -409)
+rotation = -3.1415925
